@@ -1,7 +1,9 @@
 #!/bin/bash
 #####################################################################
-# Benchmark Script 2 by Hidden Refuge from FreeVPS                  #
-# Copyright(C) 2015 - 2016 by Hidden Refuge                         #
+# Post4VPS Benchmarking Script Official by sohamb03                 #
+# Copyright (C) 2019 by sohamb03.                                   #
+#####################################################################
+# Copyright(C) 2015 - 2018 by Hidden Refuge                         #
 # Github: https://github.com/hidden-refuge/bench-sh-2               #
 #####################################################################
 # Original script by akamaras/camarg                                #
