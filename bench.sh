@@ -77,9 +77,9 @@ speedtest4 () {
 	slwa=$( wget -4 -O /dev/null http://speedtest.sea01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Seattle, WA, US		Softlayer	$slwa " | tee -a $HOME/bench.log
 	slsjc=$( wget -4 -O /dev/null http://speedtest.sjc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "San Jose, CA, US	Softlayer	$slsjc " | tee -a $HOME/bench.log
-	slche=$( wget -4 -O /dev/null http://speedtest.che01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Chennai, TN, IN	Softlayer 	$slche " | tee -a $HOME/bench.log
+	echo "San Jose, CA, US	        Softlayer	$slsjc " | tee -a $HOME/bench.log
+	slfra=$( wget -4 -O /dev/null http://speedtest.fra02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Frankfurt, Germany        Softlayer 	$slfra " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	# Asia speed test
 	linodejp=$( wget -4 -O /dev/null http://speedtest.tokyo.linode.com/100MB-tokyo.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
