@@ -92,12 +92,12 @@ speedtest4 () {
 	echo "Taiwan                    Hinet           $hitw " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	# Europe speed test
-	i3d=$( wget -4 -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Rotterdam, Netherlands	id3.net		$i3d" | tee -a $HOME/bench.log
-	leaseweb=$( wget -4 -O /dev/null http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Haarlem, Netherlands	Leaseweb	$leaseweb " | tee -a $HOME/bench.log
-	echo "" | tee -a $HOME/bench.log
-	echo "" | tee -a $HOME/bench.log
+	#i3d=$( wget -4 -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	#echo "Rotterdam, Netherlands	id3.net		$i3d" | tee -a $HOME/bench.log
+	#leaseweb=$( wget -4 -O /dev/null http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	#echo "Haarlem, Netherlands	Leaseweb	$leaseweb " | tee -a $HOME/bench.log
+	#echo "" | tee -a $HOME/bench.log
+	#echo "" | tee -a $HOME/bench.log
 }
 speedtest6 () {
 	ipvii=$( wget -qO- ipv6.icanhazip.com ) # Getting IPv6
