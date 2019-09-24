@@ -79,8 +79,9 @@ speedtest4 () {
 	echo "San Jose, CA, US	Softlayer	$slsjc " | tee -a $HOME/bench.log
 	slhou=$( wget -4 -O /dev/null http://speedtest.hou02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Houston, TX, US         Softlayer	$slhou " | tee -a $HOME/bench.log
-	#slhou=$( wget -4 -O /dev/null http://speedtest.hou02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	#echo "Houston, TX, US           Softlayer	$slhou " | tee -a $HOME/bench.log
+        echo "" | tee -a $HOME/bench.log
+	slsao=$( wget -4 -O /dev/null http://speedtest.sao01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Sao Paulo, Brazil      Softlayer	$slsao " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	# Asia speed test
 	slsg=$( wget -4 -O /dev/null http://speedtest.sng01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
