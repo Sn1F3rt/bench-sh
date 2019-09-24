@@ -81,21 +81,31 @@ speedtest4 () {
 	slsjc=$( wget -4 -O /dev/null http://speedtest.sjc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "San Jose, CA, US	Softlayer	$slsjc " | tee -a $HOME/bench.log
 	slhou=$( wget -4 -O /dev/null http://speedtest.hou02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Houston, US             Softlayer	$slhou " | tee -a $HOME/bench.log
+	echo "Houston, TX, US           Softlayer	$slhou " | tee -a $HOME/bench.log
+	#slhou=$( wget -4 -O /dev/null http://speedtest.hou02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	#echo "Houston, TX, US           Softlayer	$slhou " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	# Asia speed test
-	#slmel=$( wget -4 -O /dev/null http://speedtest.mel01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	#echo "Melbourne, AU		Softlayer	$slmel " | tee -a $HOME/bench.log
 	slsg=$( wget -4 -O /dev/null http://speedtest.sng01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Singapore 		Softlayer	$slsg " | tee -a $HOME/bench.log
 	hitw=$( wget -4 -O /dev/null http://tpdb.speed2.hinet.net/test_100m.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' ) 
 	echo "Taiwan                    Hinet           $hitw " | tee -a $HOME/bench.log
+	lintky=$( wget -4 -O /dev/null http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Tokyo, Japan 		Linode		$lintky " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	# Europe speed test
+	hetzde=$( wget -4 -O /dev/null https://speed.hetzner.de/100MB.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Nuremberg, Germany	Hetzner		$hetzde" | tee -a $HOME/bench.log
 	i3d=$( wget -4 -O /dev/null http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Rotterdam, Netherlands	id3.net		$i3d" | tee -a $HOME/bench.log
 	leaseweb=$( wget -4 -O /dev/null http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Haarlem, Netherlands	Leaseweb	$leaseweb " | tee -a $HOME/bench.log
+	mlnit=$( wget -4 -O /dev/null http://speedtest.mil01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Milan, Italy		Softlayer	$i3d" | tee -a $HOME/bench.log
+	echo "" | tee -a $HOME/bench.log
+	# Australia Speed Test
+	slmel=$( wget -4 -O /dev/null http://speedtest.mel01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Melbourne, AU		Softlayer	$slmel " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 }
