@@ -4,15 +4,12 @@
 # Copyright (C) 2019 by sohamb03.                                   #
 #####################################################################
 # Copyright(C) 2015 - 2018 by Hidden Refuge                         #
-# Github: https://github.com/hidden-refuge/bench-sh-2               #
 #####################################################################
 # Original script by akamaras/camarg                                #
-# Original: http://www.akamaras.com/linux/linux-server-info-script/ #
 # Original Copyright (C) 2011 by akamaras/camarg                    #
 #####################################################################
-# The speed test was added by dmmcintyre3 from FreeVPS.us as a      #
-# modification to the original script.                              #
-# Modded Script: https://freevps.us/thread-2252.html                # 
+# The speed test was added by dmmcintyre3 as a modification to the  #
+# original script.			                            #
 # Copyright (C) 2011 by dmmcintyre3 for the modification            #
 #####################################################################
 sysinfo () {
@@ -31,7 +28,7 @@ sysinfo () {
 	vram=$( free -m | awk 'NR==3 {print $2}' )
 	# Reading system uptime
 	up=$( uptime | awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }' | sed 's/^[ \t]*//;s/[ \t]*$//' )
-	# Reading operating system and version (simple, didn't filter the strings at the end...)
+	# Reading operating system and version
 	opsy=$( cat /etc/os-release | grep PRETTY_NAME | tr -d '"' | sed -e "s/^PRETTY_NAME=//" ) # Operating System & Version
 	arch=$( uname -m ) # Architecture
 	lbit=$( getconf LONG_BIT ) # Architecture in Bit
@@ -166,7 +163,6 @@ iotest () {
 	echo "" | tee -a $HOME/bench.log
 }
 gbench () {
-	# Improved version of my code by thirthy_speed https://freevps.us/thread-16943-post-191398.html#pid191398
 	echo "" | tee -a $HOME/bench.log
 	echo "System Benchmark (Experimental)" | tee -a $HOME/bench.log
 	echo "-------------------------------" | tee -a $HOME/bench.log
@@ -205,7 +201,7 @@ gbench () {
 }
 hlp () {
 	echo ""
-	echo "(C) Bench.sh 2 by Hidden Refuge <me at hiddenrefuge got eu dot org>"
+	echo "(C) Post4VPS Official Benchmarking Script by sohamb03 <sohamb03 at outlook dot com>"
 	echo ""
 	echo "Usage: bench.sh <option>"
 	echo ""
