@@ -77,8 +77,8 @@ speedtest4 () {
 	echo "Seattle, WA, US		Softlayer	$slwa " | tee -a $HOME/bench.log
 	slsjc=$( wget -4 -O /dev/null http://speedtest.sjc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "San Jose, CA, US	Softlayer	$slsjc " | tee -a $HOME/bench.log
-	slhou=$( wget -4 -O /dev/null http://speedtest.hou02.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Houston, TX, US         Softlayer	$slhou " | tee -a $HOME/bench.log
+	slwdc=$( wget -4 -O /dev/null http://mirror.wdc1.us.leaseweb.net/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Washington, DC, US	Leaseweb 	$slwdc " | tee -a $HOME/bench.log
         echo "" | tee -a $HOME/bench.log
 	#South America Speed test
         slsao=$( wget -4 -O /dev/null http://speedtest.sao01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
