@@ -248,5 +248,10 @@ case $1 in
 		sysinfo; speedtest4; iotest;;
 esac
 
-
+#####################################################################
+# Any queries or help regarding the script should be posted here:   #
+# https://post4vps.com/Thread-Post4VPS-Benchmarking-Script          #
+# As aforesaid suggestions can be emailed to me, PMed, or you can   #
+# fork and create a pull request.				    #
+#####################################################################
 
