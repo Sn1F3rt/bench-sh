@@ -41,3 +41,6 @@ IPv6 only speed test with system benchmark. This will use 1 GB bandwidth!
 System Info + Speedtest IPv4 & IPv6 + Drive Speed + System Benchmark:
 `./bench.sh -b46` or `./bench.sh -b64`
 Dual stack speed test with system benchmark. This will use 2 GB bandwidth.
+
+Any queries or help regarding the script should be posted here:https://post4vps.com/Thread-Post4VPS-Benchmarking-Script 
+As aforesaid suggestions can be emailed to me, PMed, or you can fork and create a pull request.
