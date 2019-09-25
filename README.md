@@ -2,7 +2,7 @@
 
 The Official Benchmarking Script for Post4VPS.
 
-Demo Output: https://pastebin.com/dwNxVK32
+Demo Output: https://pastebin.com/ctVGzzmz
 
 
 Parameters
