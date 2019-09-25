@@ -1,16 +1,16 @@
 #!/bin/bash
 #####################################################################
 # Post4VPS Benchmarking Script Official by sohamb03                 #
-# Copyright (C) 2019 by sohamb03.                                   #
+# Copyright © 2019 by sohamb03.                                   #
 #####################################################################
-# Copyright(C) 2015 - 2018 by Hidden Refuge                         #
+# Copyright © 2015 - 2017 by Hidden Refuge                         #
 #####################################################################
 # Original script by akamaras/camarg                                #
-# Original Copyright (C) 2011 by akamaras/camarg                    #
+# Original Copyright © 2011 by akamaras/camarg                    #
 #####################################################################
 # The speed test was added by dmmcintyre3 as a modification to the  #
 # original script.			                            #
-# Copyright (C) 2011 by dmmcintyre3 for the modification            #
+# Copyright © 2011 by dmmcintyre3 for the modification            #
 #####################################################################
 sysinfo () {
 	# Removing existing bench.log
