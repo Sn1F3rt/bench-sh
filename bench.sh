@@ -165,6 +165,7 @@ iotest () {
 	echo "" | tee -a $HOME/bench.log
 }
 gbench () {
+	# Improved version of my code by thirthy_speed https://freevps.us/thread-16943-post-191398.html#pid191398
 	echo "" | tee -a $HOME/bench.log
 	echo "System Benchmark (Experimental)" | tee -a $HOME/bench.log
 	echo "-------------------------------" | tee -a $HOME/bench.log
@@ -172,12 +173,8 @@ gbench () {
 	echo "Note: The benchmark might not always work (eg: missing dependencies)." | tee -a $HOME/bench.log
 	echo "Failures are highly possible. We're using Geekbench for this test." | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
-        gb_page=http://www.primatelabs.com/geekbench/download/linux/
-        gb_dl=$(wget -qO - $gb_page | \
-                 sed -n 's/.*\(https\?:[^:]*\.tar\.gz\).*/\1/p')
-        gb_noext=${gb_dl##*/}
-        gb_noext=${gb_noext%.tar.gz} 
-        gb_name=${gb_noext//-/ }
+	gb_dl="http://cdn.geekbench.com/Geekbench-5.0.1-Linux.tar.gz"
+	gb_name="Geekbench 5.0.1"
 	echo "File is located at $gb_dl" | tee -a $HOME/bench.log
 	echo "Downloading and extracting $gb_name" | tee -a $HOME/bench.log
         wget -qO - "$gb_dl" | tar xzv 2>&1 >/dev/null
@@ -189,12 +186,12 @@ gbench () {
 	echo "" >> $HOME/bench.log
 	echo "--- Geekbench Results ---" >> $HOME/bench.log
 	sleep 2
-	$HOME/dist/$gb_noext/geekbench_x86_32 >> $HOME/bench.log
+	$HOME/Geekbench-5.0.1-Linux/geekbench5 >> $HOME/bench.log
 	echo "--- Geekbench Results End ---" >> $HOME/bench.log
 	echo "" >> $HOME/bench.log
 	echo "Finished. Removing Geekbench files" | tee -a $HOME/bench.log
 	sleep 1
-	rm -rf $HOME/dist/
+	rm -rf $HOME/Geekbench-5.0.1-Linux/
 	echo "" | tee -a $HOME/bench.log
         gbl=$(sed -n '/following link/,/following link/ {/following link\|^$/b; p}' $HOME/bench.log | sed 's/^[ \t]*//;s/[ \t]*$//' )
 	echo "Benchmark Results: $gbl" | tee -a $HOME/bench.log
