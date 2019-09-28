@@ -36,6 +36,7 @@ sysinfo () {
 	kern=$( uname -r )
 	# Date of benchmark
 	bdates=$( date )
+	type banner.txt
 	echo "Benchmark started on $bdates" | tee -a $HOME/bench.log
 	echo "Full benchmark log: $HOME/bench.log" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
