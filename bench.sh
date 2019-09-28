@@ -1,16 +1,16 @@
 #!/bin/bash
 #####################################################################
 # Post4VPS Benchmarking Script Official by sohamb03                 #
-# Copyright © 2019 by sohamb03.                                   #
+# Copyright © 2019 by sohamb03.                                     #
 #####################################################################
-# Copyright © 2015 - 2017 by Hidden Refuge                         #
+# Copyright © 2015 - 2017 by Hidden Refuge                          #
 #####################################################################
 # Original script by akamaras/camarg                                #
-# Original Copyright © 2011 by akamaras/camarg                    #
+# Original Copyright © 2011 by akamaras/camarg                      #
 #####################################################################
 # The speed test was added by dmmcintyre3 as a modification to the  #
 # original script.			                            #
-# Copyright © 2011 by dmmcintyre3 for the modification            #
+# Copyright © 2011 by dmmcintyre3 for the modification              #
 #####################################################################
 sysinfo () {
 	# Removing existing bench.log
@@ -36,7 +36,13 @@ sysinfo () {
 	kern=$( uname -r )
 	# Date of benchmark
 	bdates=$( date )
-	type https://raw.githubusercontent.com/sohamb03/bench-sh/master/banner.txt
+	echo "\______   \____  _______/  |_  /  |  \   \ /   /\______   \/   _____/"
+	echo " |     ___/  _ \/  ___/\   __\/   |  |\   Y   /  |     ___/\_____  \ "
+	echo " |    |  (  <_> )___ \  |  | /    ^   /\     /   |    |    /        \"
+	echo " |____|   \____/____  > |__| \____   |  \___/    |____|   /_______  /"
+	echo "                    \/            |__|                            \/ "
+	echo "                     THE FREE VPS PROVIDER"
+	echo "                      -----X---X---X-----   "
 	echo "Benchmark started on $bdates" | tee -a $HOME/bench.log
 	echo "Full benchmark log: $HOME/bench.log" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
