@@ -41,6 +41,9 @@ sysinfo () {
 	echo "  / ____ / //   ) ) ((   ) ) / /   /____  /   || / / / ____ /    \\      "
 	echo " //       //   / /   \ \    / /        / /    ||/ / //             ) )   "
 	echo "//       ((___/ / //   ) ) / /        / /     |  / //       ((___ / /    "
+	echo ""
+	echo "              THE FREE VPS PROVIDER -  https://post4vps.com              "
+	echo ""
 	echo "Benchmark started on $bdates" | tee -a $HOME/bench.log
 	echo "Full benchmark log: $HOME/bench.log" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
