@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 echo "Testing hard drive write speed."
 maxwrite="0"
