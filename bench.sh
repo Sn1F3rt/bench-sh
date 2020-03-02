@@ -79,8 +79,8 @@ speedtest4 () {
 	# United States speed test
 	coloatatl=$( wget -4 -O /dev/null http://speed.atl.coloat.com/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Atlanta, GA, US		Coloat		$coloatatl " | tee -a $HOME/bench.log
-	sldltx=$( wget -4 -O /dev/null http://speedtest.dal05.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Dallas, TX, US		Softlayer	$sldltx " | tee -a $HOME/bench.log
+	sldltx=$( wget -4 -O /dev/null http://speedtest.sohamb03.me/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Dallas, TX, US		@sohamb03	$sldltx " | tee -a $HOME/bench.log
 	slwa=$( wget -4 -O /dev/null http://speedtest.sea01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Seattle, WA, US		Softlayer	$slwa " | tee -a $HOME/bench.log
 	slsjc=$( wget -4 -O /dev/null http://speedtest.sjc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -113,8 +113,11 @@ speedtest4 () {
 	# Australia Speed Test
 	slmel=$( wget -4 -O /dev/null http://speedtest.mel01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Melbourne, AU		Softlayer	$slmel " | tee -a $HOME/bench.log
+	slmel=$( wget -4 -O /dev/null http://speedtest.syd01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	echo "Sydney, AU		Softlayer	$slmel " | tee -a $HOME/bench.log
+        echo "" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
-	echo "" | tee -a $HOME/bench.log
+
 }
 speedtest6 () {
 	ipvii=$( wget -qO- ipv6.icanhazip.com ) # Getting IPv6
