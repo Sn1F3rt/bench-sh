@@ -7,7 +7,8 @@ Demo Results: https://pastebin.com/bPzRABbW
 ## Direct Run
 
 ```sh
-wget --no-check-certificate https://raw.githubusercontent.com/sohamb03/bench-sh/master/bench.sh && bash bench.sh && rm -rf bench.sh```
+wget --no-check-certificate https://raw.githubusercontent.com/sohamb03/bench-sh/master/bench.sh && bash bench.sh && rm -rf bench.sh
+```
 OR
 ```sh
 curl -O -k https://raw.githubusercontent.com/sohamb03/bench-sh/master/bench.sh && bash bench.sh && rm -rf bench.sh
