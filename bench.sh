@@ -48,15 +48,15 @@ sysinfo () {
 	# Date of benchmark
 	bdates=$( date )
 	
-	echo ""
-	echo "    //   ) )                                  ||   / / //   ) ) //   ) ) "
-	echo "   //___/ /  ___      ___   __  ___ //___/ /  ||  / / //___/ / ((        "
-	echo "  / ____ / //   ) ) ((   ) ) / /   /____  /   || / / / ____ /    \\      "
-	echo " //       //   / /   \ \    / /        / /    ||/ / //             ) )   "
-	echo "//       ((___/ / //   ) ) / /        / /     |  / //       ((___ / /    "
-	echo ""
-	echo "              	FREE VPS PROVIDER  -  https://post4vps.com             "
-	echo ""
+	echo "" | tee -a $HOME/bench.log
+	echo "    //   ) )                                  ||   / / //   ) ) //   ) ) " | tee -a $HOME/bench.log
+	echo "   //___/ /  ___      ___   __  ___ //___/ /  ||  / / //___/ / ((        " | tee -a $HOME/bench.log
+	echo "  / ____ / //   ) ) ((   ) ) / /   /____  /   || / / / ____ /    \\      " | tee -a $HOME/bench.log
+	echo " //       //   / /   \ \    / /        / /    ||/ / //             ) )   " | tee -a $HOME/bench.log
+	echo "//       ((___/ / //   ) ) / /        / /     |  / //       ((___ / /    " | tee -a $HOME/bench.log
+	echo "" | tee -a $HOME/bench.log
+	echo "              	FREE VPS PROVIDER  -  https://post4vps.com             " | tee -a $HOME/bench.log
+	echo "" | tee -a $HOME/bench.log
 	
 	echo "Benchmark started on $bdates" | tee -a $HOME/bench.log
 	echo "Full benchmark log: $HOME/bench.log" | tee -a $HOME/bench.log
@@ -90,7 +90,8 @@ speedtest4 () {
 	echo "" | tee -a $HOME/bench.log
 	
 	# Cachefly CDN speed test
-	echo "Location		Provider	Speed"	| tee -a $HOME/bench.log
+	echo "Location		Provider	Speed" | tee -a $HOME/bench.log
+	echo "--------    	--------	-----" | tee -a $HOME/bench.log
 	cachefly=$( wget -4 -O /dev/null http://cachefly.cachefly.net/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "CDN			Cachefly	$cachefly" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
@@ -151,6 +152,7 @@ speedtest6 () {
   	echo "Your public IPv6 is $ipvii" | tee -a $HOME/bench.log
   	echo "" | tee -a $HOME/bench.log
   	echo "Location		Provider	Speed" | tee -a $HOME/bench.log
+	echo "--------		--------	-----" | tee -a $HOME/bench.log
 	
   	# United States speed test
 	v6atl=$( wget -6 -O /dev/null http://[2602:fff6:3::4:4]/100MB.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
