@@ -1,6 +1,6 @@
 # bench-sh
 
-This is the Official Benchmarking Script for Post4VPS, and an improved version of **@Hidden Refuge**'s bench-sh-2](https://github.com/hidden-refuge/bench-sh-2).
+This is the Official Benchmarking Script for Post4VPS, and an improved version of **@Hidden Refuge**'s [bench-sh-2](https://github.com/hidden-refuge/bench-sh-2).
 
 Demo Results: https://pastebin.com/bPzRABbW
 
