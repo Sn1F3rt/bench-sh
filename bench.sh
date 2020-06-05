@@ -48,6 +48,7 @@ sysinfo () {
 	# Date of benchmark
 	bdates=$( date )
 	
+	echo ""
 	echo "    //   ) )                                  ||   / / //   ) ) //   ) ) "
 	echo "   //___/ /  ___      ___   __  ___ //___/ /  ||  / / //___/ / ((        "
 	echo "  / ____ / //   ) ) ((   ) ) / /   /____  /   || / / / ____ /    \\      "
@@ -82,7 +83,7 @@ speedtest4 () {
 	# Getting IPv4 address
 	ipiv=$( wget -qO- ipv4.icanhazip.com ) 
 	
-	# Speed test via wget for IPv4 only with 16x 100 MB files. 1.6 GB bandwidth will be used!
+	# Speed test via wget for IPv4 only with 15x 100 MB files. 1.5 GB bandwidth will be used!
 	echo "Speedtest (IPv4 only)" | tee -a $HOME/bench.log
 	echo "---------------------" | tee -a $HOME/bench.log
 	echo "Your public IPv4 is $ipiv" | tee -a $HOME/bench.log
@@ -135,8 +136,6 @@ speedtest4 () {
 	# Australia Speed Test
 	slmel=$( wget -4 -O /dev/null http://speedtest.mel01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	echo "Melbourne, AU		Softlayer	$slmel " | tee -a $HOME/bench.log
-	slsyd=$( wget -4 -O /dev/null http://speedtest.syd01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	echo "Sydney, AU		Softlayer	$slyd " | tee -a $HOME/bench.log
         
 	echo "" | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
