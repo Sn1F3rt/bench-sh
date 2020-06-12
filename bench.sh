@@ -152,7 +152,7 @@ speedtest6 () {
   	echo "Your public IPv6 is $ipvii" | tee -a $HOME/bench.log
   	echo "" | tee -a $HOME/bench.log
   	echo "Location		Provider	Speed" | tee -a $HOME/bench.log
-	echo "--------		--------	-----" | tee -a $HOME/bench.log
+	echo "--------		        --------	-----" | tee -a $HOME/bench.log
 	
   	# United States speed test
 	v6atl=$( wget -6 -O /dev/null http://[2602:fff6:3::4:4]/100MB.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -185,8 +185,8 @@ speedtest6 () {
 	echo "" | tee -a $HOME/bench.log
 }
 iotest () {
-	echo "Disk Speed" | tee -a $HOME/bench.log
-	echo "----------" | tee -a $HOME/bench.log
+	echo "Buffered Sequential Write Speed" | tee -a $HOME/bench.log
+	echo "-------------------------------" | tee -a $HOME/bench.log
 	
 	# Measuring disk speed with DD
 	io=$( ( dd if=/dev/zero of=test_$$ bs=64k count=16k conv=fdatasync && rm -f test_$$ ) 2>&1 | awk -F, '{io=$NF} END { print io}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
