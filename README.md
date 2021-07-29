@@ -53,7 +53,7 @@ Dual stack speed test with system benchmark. This will use 2.5 GB bandwidth.
 
 ## Issues/Suggestions
 
-If you would like to report any issues with the script, any of the speedtest servers or suggest an improvement in general, please create an issue on this GitHub repository. 
+If you would like to report any issue with the script, any of the speedtest servers or suggest an improvement in general, please create an issue on this GitHub repository. 
 
 ## License
 
