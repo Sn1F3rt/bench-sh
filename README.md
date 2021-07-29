@@ -1,17 +1,17 @@
 # bench-sh
 
-This is the Official Benchmarking Script for Post4VPS, and an improved version of **@Hidden Refuge**'s [bench-sh-2](https://github.com/hidden-refuge/bench-sh-2).
+A VPS benchmarking script with various features.
 
 Demo Results: https://pastebin.com/bPzRABbW
 
 ## Direct Run
 
 ```sh
-wget --no-check-certificate https://raw.githubusercontent.com/sohamb03/bench-sh/master/bench.sh && bash bench.sh && rm -rf bench.sh
+wget --no-check-certificate https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh && bash bench.sh && rm -rf bench.sh
 ```
 OR
 ```sh
-curl -O -k https://raw.githubusercontent.com/sohamb03/bench-sh/master/bench.sh && bash bench.sh && rm -rf bench.sh
+curl -O -k https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh && bash bench.sh && rm -rf bench.sh
 ```
 
 ## Parameters
@@ -52,5 +52,12 @@ System Info + Speedtest IPv4 & IPv6 + Drive Speed + System Benchmark:
 Dual stack speed test with system benchmark. This will use 2.5 GB bandwidth.
 
 ## Issues/Suggestions
-Any queries or help regarding the script can be posted here: https://post4vps.com/Thread-Post4VPS-Benchmarking-Script or you can create an issue on GitHub.
-As aforesaid suggestions can be emailed to me, PMed, or you can fork and create a pull request.
+
+If you would like to report any issues with the script, any of the speedtest servers or suggest an improvement in general, please create an issue on this GitHub repository. 
+
+## License
+
+Copyright (c) 2019-2021 Sayan Bhattacharyya
+Copyright (C) 2015 - 2017 by Hidden Refuge (Various bug fixes and performance improvements)
+Copyright (C) 2011 by dmmcintyre3 (Speed Test Modification)
+Copyright (C) 2011 by akamaras/camarg (Original Script)
