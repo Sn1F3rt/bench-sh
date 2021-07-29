@@ -1,19 +1,5 @@
 #!/bin/bash
 
-#####################################################################
-# 	Post4VPS Benchmarking Script Official by sohamb03           #
-# 		Copyright © 2019 by sohamb03                        #
-#####################################################################
-# 	    Copyright © 2015 - 2017 by Hidden Refuge                #
-#####################################################################
-# 		Original script by akamaras/camarg                  #
-# 	       Copyright © 2011 by akamaras/camarg                  #
-#####################################################################
-# The speed test was added by dmmcintyre3 as a modification to the  #
-# 			original script 			    #
-# 	Copyright © 2011 by dmmcintyre3 for the modification        #
-#####################################################################
-
 sysinfo () {
 	# Removing existing bench.log, if any
 	rm -rf $HOME/bench.log
@@ -49,13 +35,12 @@ sysinfo () {
 	bdates=$( date )
 	
 	echo "" | tee -a $HOME/bench.log
-	echo "    //   ) )                                  ||   / / //   ) ) //   ) ) " | tee -a $HOME/bench.log
-	echo "   //___/ /  ___      ___   __  ___ //___/ /  ||  / / //___/ / ((        " | tee -a $HOME/bench.log
-	echo "  / ____ / //   ) ) ((   ) ) / /   /____  /   || / / / ____ /    \\      " | tee -a $HOME/bench.log
-	echo " //       //   / /   \ \    / /        / /    ||/ / //             ) )   " | tee -a $HOME/bench.log
-	echo "//       ((___/ / //   ) ) / /        / /     |  / //       ((___ / /    " | tee -a $HOME/bench.log
-	echo "" | tee -a $HOME/bench.log
-	echo "              	FREE VPS PROVIDER  -  https://post4vps.com             " | tee -a $HOME/bench.log
+	echo "__________                     .__        _________ ___ ___  " | tee -a $HOME/bench.log
+	echo "\______   \ ____   ____   ____ |  |__    /   _____//   |   \ " | tee -a $HOME/bench.log
+	echo " |    |  _// __ \ /    \_/ ___\|  |  \   \_____  \/    ~    \" | tee -a $HOME/bench.log
+	echo " |    |   \  ___/|   |  \  \___|   Y  \  /        \    Y    /" | tee -a $HOME/bench.log
+	echo " |______  /\___  >___|  /\___  >___|  / /_______  /\___|_  / " | tee -a $HOME/bench.log
+	echo "        \/     \/     \/     \/     \/          \/       \/  " | tee -a $HOME/bench.log
 	echo "" | tee -a $HOME/bench.log
 	
 	echo "Benchmark started on $bdates" | tee -a $HOME/bench.log
@@ -97,9 +82,9 @@ speedtest4 () {
 	echo "" | tee -a $HOME/bench.log
 	
 	# United States speed test
-	sohambatl=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sohamb03.me/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-	if ! [ -z "$sohambatl" ]; then echo "Atlanta, GA, US		@sohamb03	$sohambatl " | tee -a $HOME/bench.log; else :; fi
-	sldltx=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.dal05.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	# sohambatl=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sohamb03.me/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	# if ! [ -z "$sohambatl" ]; then echo "Atlanta, GA, US		@sohamb03	$sohambatl " | tee -a $HOME/bench.log; else :; fi
+	# sldltx=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.dal05.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	if ! [ -z "$sldltx" ]; then echo "Dallas, TX, US		Softlayer	$sldltx " | tee -a $HOME/bench.log; else :; fi
 	slwa=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sea01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	if ! [ -z "$slwa" ]; then echo "Seattle, WA, US		Softlayer	$slwa " | tee -a $HOME/bench.log; else :; fi
