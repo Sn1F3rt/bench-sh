@@ -84,7 +84,7 @@ speedtest4 () {
 	# United States speed test
 	# sohambatl=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sohamb03.me/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	# if ! [ -z "$sohambatl" ]; then echo "Atlanta, GA, US		@sohamb03	$sohambatl " | tee -a $HOME/bench.log; else :; fi
-	# sldltx=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.dal05.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+	sldltx=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.dal05.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	if ! [ -z "$sldltx" ]; then echo "Dallas, TX, US		Softlayer	$sldltx " | tee -a $HOME/bench.log; else :; fi
 	slwa=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sea01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
 	if ! [ -z "$slwa" ]; then echo "Seattle, WA, US		Softlayer	$slwa " | tee -a $HOME/bench.log; else :; fi
