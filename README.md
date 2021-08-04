@@ -2,7 +2,7 @@
 
 A VPS benchmarking script with various features.
 
-Demo Results: https://pastebin.com/bPzRABbW
+Demo Results: https://pastebin.com/rV1DayRp
 
 ## Direct Run
 
