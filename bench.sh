@@ -112,7 +112,8 @@ speedtest4 () {
         hetzde=$( wget -4 -O /dev/null --timeout=3 --tries=2 https://speed.hetzner.de/100MB.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$hetzde" ]; then echo "Nuremberg, Germany    Hetzner         $hetzde" | tee -a $HOME/bench.log; else :; fi
         i3d=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$i3d" ]; then echo "Rotterdam, Netherlands   id3.net         $i3d" | tee -a $HOME/bench.log; else :; fi        leaseweb=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+        if ! [ -z "$i3d" ]; then echo "Rotterdam, Netherlands   id3.net         $i3d" | tee -a $HOME/bench.log; else :; fi        
+        leaseweb=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://mirror.leaseweb.com/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$leaseweb" ]; then echo "Haarlem, Netherlands        Leaseweb        $leaseweb " | tee -a $HOME/bench.log; else :; fi
         mlnit=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.mil01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$mlnit" ]; then echo "Milan, Italy           Softlayer       $mlnit" | tee -a $HOME/bench.log; else :; fi
