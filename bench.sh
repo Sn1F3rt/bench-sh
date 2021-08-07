@@ -88,8 +88,8 @@ speedtest4 () {
         if ! [ -z "$sldltx" ]; then echo "Dallas, TX, US                Softlayer       $sldltx " | tee -a $HOME/bench.log; else :; fi
         dpwa=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://sea.download.datapacket.com/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$dpwa" ]; then echo "Seattle, WA, US         Datapacket      $dpwa " | tee -a $HOME/bench.log; else :; fi
-        slsjc=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sjc01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$slsjc" ]; then echo "San Jose, CA, US       Softlayer       $slsjc " | tee -a $HOME/bench.log; else :; fi
+        hhsfc=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://www.heliohost.org/downloads/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
+        if ! [ -z "$hhsfc" ]; then echo "San Francisco, CA, US       HelioHost       $hhsfc " | tee -a $HOME/bench.log; else :; fi
         slwdc=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://mirror.wdc1.us.leaseweb.net/speedtest/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$slwdc" ]; then echo "Washington, DC, US     Leaseweb        $slwdc " | tee -a $HOME/bench.log; else :; fi
         echo "" | tee -a $HOME/bench.log
