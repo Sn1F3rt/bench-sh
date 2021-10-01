@@ -230,7 +230,7 @@ gbench () {
 }
 hlp () {
         echo ""
-        echo "Bench SH - VPS Benchmarking Script by Sn1F3rt <sn1f3rt@outlook.com>"
+        echo "bench-sh - VPS Benchmarking Script by Sn1F3rt <sn1f3rt@outlook.com>"
         echo ""
         echo "Usage: sh bench.sh <option>"
         echo ""
@@ -243,7 +243,8 @@ hlp () {
         echo "-64               : Same as above."
         echo "-b                : Normal benchmark with IPv4 only speedtest, I/O test and Geekbench system benchmark."
         echo "-b6               : Normal benchmark with IPv6 only speedtest, I/O test and Geekbench system benchmark."
-        echo "-b46              : Normal benchmark with IPv4 and IPv6 speedtest, I/O test and Geekbench system benchmark."        echo "-b64              : Same as above."
+        echo "-b46              : Normal benchmark with IPv4 and IPv6 speedtest, I/O test and Geekbench system benchmark."       
+        echo "-b64              : Same as above."
         echo "-h                : This help page."
         echo ""
         echo "The Geekbench system benchmark is experimental. So beware of failure!"
