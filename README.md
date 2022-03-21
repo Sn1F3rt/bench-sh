@@ -7,11 +7,11 @@ Demo Results: https://pastebin.com/rV1DayRp
 ## Direct Run
 
 ```sh
-wget --no-check-certificate https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh && bash bench.sh && rm -rf bench.sh
+wget -qO- https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh | bash
 ```
 OR
 ```sh
-curl -O -k https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh && bash bench.sh && rm -rf bench.sh
+curl -Lso- https://raw.githubusercontent.com/Sn1F3rt/bench-sh/main/bench.sh | bash
 ```
 
 ## Parameters
