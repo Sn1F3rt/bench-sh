@@ -101,7 +101,7 @@ speedtest4 () {
 
         # Asia speed test
         dosg=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest-sgp1.digitalocean.com/100mb.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$dosg" ]; then echo "Singapore               DigitalOcean       $dosg " | tee -a $HOME/bench.log; else :; fi
+        if ! [ -z "$dosg" ]; then echo "Singapore               DigitalOcean    $dosg " | tee -a $HOME/bench.log; else :; fi
         hitw=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://tpdb.speed2.hinet.net/test_100m.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' ) 
         if ! [ -z "$hitw" ]; then echo "Taiwan                  Hinet           $hitw " | tee -a $HOME/bench.log; else :; fi
         lintky=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -121,7 +121,7 @@ speedtest4 () {
 
         # Australia Speed Test
         unetsyd=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://au-syd-speedtest01.urlnetworks.net/file100.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$unetsyd" ]; then echo "Sydney, AU              URL Networks       $unetsyd " | tee -a $HOME/bench.log; else :; fi
+        if ! [ -z "$unetsyd" ]; then echo "Sydney, AU              URL Networks    $unetsyd " | tee -a $HOME/bench.log; else :; fi
         
         echo "" | tee -a $HOME/bench.log
         echo "" | tee -a $HOME/bench.log
