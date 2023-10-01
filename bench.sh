@@ -85,7 +85,7 @@ speedtest4 () {
         linatl=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.atlanta.linode.com/100MB-atlanta.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$linatl" ]; then echo "Atlanta, GA, US         Linode          $linatl " | tee -a $HOME/bench.log; else :; fi
         ezdltx=$( wget -4 -O /dev/null --timeout=3 --tries=2 https://speedtest-dc04.enzu.com/100MB.test 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$ezdltx" ]; then echo "Dallas, TX, US          Enzu       $ezdltx " | tee -a $HOME/bench.log; else :; fi
+        if ! [ -z "$ezdltx" ]; then echo "Dallas, TX, US          Enzu            $ezdltx " | tee -a $HOME/bench.log; else :; fi
         dpwa=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://sea.download.datapacket.com/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$dpwa" ]; then echo "Seattle, WA, US         Datapacket      $dpwa " | tee -a $HOME/bench.log; else :; fi
         hhsfc=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://heliohost.org/speedtest/100MB.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -101,7 +101,7 @@ speedtest4 () {
 
         # Asia speed test
         lwsg=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.sin1.sg.leaseweb.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$lwsg" ]; then echo "Singapore               Leaseweb    $lwsg " | tee -a $HOME/bench.log; else :; fi
+        if ! [ -z "$lwsg" ]; then echo "Singapore               Leaseweb        $lwsg " | tee -a $HOME/bench.log; else :; fi
         hitw=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://tpdb.speed2.hinet.net/test_100m.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' ) 
         if ! [ -z "$hitw" ]; then echo "Taiwan                  Hinet           $hitw " | tee -a $HOME/bench.log; else :; fi
         lintky=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
@@ -114,7 +114,7 @@ speedtest4 () {
         i3d=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://mirror.i3d.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$i3d" ]; then echo "Rotterdam, Netherlands  id3.net         $i3d" | tee -a $HOME/bench.log; else :; fi        
         lwams=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.ams1.nl.leaseweb.net/100mb.bin 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
-        if ! [ -z "$lwams" ]; then echo "Amsterdam, Netherlands    Leaseweb        $lwams " | tee -a $HOME/bench.log; else :; fi
+        if ! [ -z "$lwams" ]; then echo "Amsterdam, Netherlands  Leaseweb        $lwams " | tee -a $HOME/bench.log; else :; fi
         mlnit=$( wget -4 -O /dev/null --timeout=3 --tries=2 http://speedtest.mil01.softlayer.com/downloads/test100.zip 2>&1 | awk '/\/dev\/null/ {speed=$3 $4} END {gsub(/\(|\)/,"",speed); print speed}' )
         if ! [ -z "$mlnit" ]; then echo "Milan, Italy            Softlayer       $mlnit" | tee -a $HOME/bench.log; else :; fi
         echo "" | tee -a $HOME/bench.log
